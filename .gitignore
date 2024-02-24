@@ -1,2 +1,4 @@
 # macOS
 .DS_Store
+
+templates/devfile-sample-dotnet60-dance/content/obj/

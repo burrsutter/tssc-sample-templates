@@ -1,7 +1,7 @@
 SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" 
 
-GITSERVER=gitlab-gitlab.apps.cluster-j8xvv.sandbox2621.opentlc.com
-QUAYSERVER=quay-j8xvv.apps.cluster-j8xvv.sandbox2621.opentlc.com
+GITSERVER=gitlab-gitlab.apps.cluster-ggzpw.sandbox3006.opentlc.com
+QUAYSERVER=quay-j8xvv.apps.cluster-ggzpw.sandbox3006.opentlc.com
 for template in $SCRIPTDIR/../templates/*
 do
     template=$(realpath $template)

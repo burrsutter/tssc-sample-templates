@@ -46,7 +46,7 @@ spec:
           ui:options:
             allowedHosts:
               - github.com # PE can replace this with on-prem host
-              - gitlab-gitlab.apps.cluster-j8xvv.sandbox2621.opentlc.com # PE can replace this with on-prem host
+              - gitlab-gitlab.apps.cluster-ggzpw.sandbox3006.opentlc.com # PE can replace this with on-prem host
         branch:
           title: Repository Default Branch
           type: string
@@ -62,9 +62,9 @@ spec:
         imageRegistry:
           title: Select a image registry
           type: string
-          default: quay-79hq7.apps.cluster-j8xvv.sandbox2621.opentlc.com
+          default: quay-79hq7.apps.cluster-ggzpw.sandbox3006.opentlc.com
           enum:
-            - quay-79hq7.apps.cluster-j8xvv.sandbox2621.opentlc.com # PE can replace this with on-prem registry
+            - quay-79hq7.apps.cluster-ggzpw.sandbox3006.opentlc.com # PE can replace this with on-prem registry
             - image-registry.openshift-image-registry.svc:5000 # PE can replace this with on-prem registry
           enumNames:
             - Quay
@@ -126,9 +126,9 @@ spec:
     - id: publish-gitlab
       name: Publish Repository to GitLab
       action: publish:gitlab
-      if: ${{ (parameters.repoUrl | parseRepoUrl).host === 'gitlab-gitlab.apps.cluster-j8xvv.sandbox2621.opentlc.com' }}
+      if: ${{ (parameters.repoUrl | parseRepoUrl).host === 'gitlab-gitlab.apps.cluster-ggzpw.sandbox3006.opentlc.com' }}
       input:
-        allowedHosts: ['gitlab-gitlab.apps.cluster-j8xvv.sandbox2621.opentlc.com']
+        allowedHosts: ['gitlab-gitlab.apps.cluster-ggzpw.sandbox3006.opentlc.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
         defaultBranch: ${{ parameters.branch }}
@@ -179,10 +179,10 @@ spec:
     - id: publish-gitlab-gitops
       name: Publish GitOps Repository to GitLab
       action: publish:gitlab
-      if: ${{ (parameters.repoUrl | parseRepoUrl).host === 'gitlab-gitlab.apps.cluster-j8xvv.sandbox2621.opentlc.com' }}
+      if: ${{ (parameters.repoUrl | parseRepoUrl).host === 'gitlab-gitlab.apps.cluster-ggzpw.sandbox3006.opentlc.com' }}
       input:
         sourcePath: gitops
-        allowedHosts: ['gitlab-gitlab.apps.cluster-j8xvv.sandbox2621.opentlc.com']
+        allowedHosts: ['gitlab-gitlab.apps.cluster-ggzpw.sandbox3006.opentlc.com']
         description: This is GitOps repository for ${{ parameters.name }}
         repoUrl: ${{ (parameters.repoUrl | parseRepoUrl).host }}?owner=${{ (parameters.repoUrl | parseRepoUrl).owner }}&repo=${{ (parameters.repoUrl | parseRepoUrl).repo }}-gitops
         defaultBranch: "main"
